@@ -7,7 +7,7 @@ const Product = (props) => {
         profit = (soldPrice - costToBusiness) * quantitySold
     } else {
         const firstTenProfit = (soldPrice - costToBusiness) * 10
-        const nextProfit = (soldPrice - costToBusiness) * (quantitySold - 10) * 0.92
+        const nextProfit = (soldPrice - costToBusiness) * (quantitySold - 10) * (1 - props.taxRate)
         profit = firstTenProfit + nextProfit;
     }
     return (
